@@ -1,9 +1,11 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { urls } from "../../routes";
 import { smallSize, smallSizeMax } from "../../utils/mediaQueryData";
 import { BurguerMenu, BurguerMenuAction } from "../BurguerMenu";
-import { Container } from "./styles";
+import { Touchable } from "../Touchable";
+import { Container, LinkList } from "./styles";
 
 export function Header() {
   const navigate = useNavigate();
@@ -16,15 +18,23 @@ export function Header() {
   return (
     <Container>
       <a href="">
-        <h1>Reed Barger {isSmall ? "a" : "b"}</h1>
+        <h1>Reed Barge</h1>
       </a>
       {isSmall && <BurguerMenu itens={burguerMenuActions} />}
       {!isSmall && (
-        <ul>
-          <li>Past work</li>
-          <li>Skills</li>
-          <li>Testemonials</li>
-        </ul>
+        <LinkList>
+          {burguerMenuActions.map((value, index) => (
+            <li key={index}>
+              <Touchable
+                onClick={() => {
+                  value.action();
+                }}
+              >
+                {value.title}
+              </Touchable>
+            </li>
+          ))}
+        </LinkList>
       )}
     </Container>
   );

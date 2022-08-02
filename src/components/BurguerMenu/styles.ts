@@ -18,8 +18,11 @@ export const Content = styled.div`
 
   ul {
     list-style: none;
+    display: flex;
+    flex-direction: column;
 
     li {
+      width: 100%;
       button {
         width: 100%;
         height: 30px;
