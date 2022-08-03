@@ -57,6 +57,7 @@ export const AppsIBuild = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 90px 32px;
+
   /* background-color: red; */
   h1 {
     margin-top: 20px;

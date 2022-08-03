@@ -24,7 +24,9 @@ export function Home() {
         {/* my infos */}
         <MyInfos>
           <MyInfosLeftDiv>
-            <Title>Hi, im Reed.I love to build amazing apps.</Title>
+            <Title>
+              Hi, im João Pedro Fukushiro. I love to build amazing apps.
+            </Title>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
@@ -79,6 +81,7 @@ export function Home() {
             PageMaker including versions of Lorem Ipsum.
           </p>
           <ImagesContainer>
+            <img src={imagem} />
             <img src={imagem} />
             <img src={imagem} />
             <img src={imagem} />
